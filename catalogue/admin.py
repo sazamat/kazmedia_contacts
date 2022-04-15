@@ -27,7 +27,7 @@ class EmployeeAdmin(admin.ModelAdmin):
     list_display = ('name', 'department', 'is_published')
     # search_fields = ('name', 'department')
     list_editable = ('is_published',)
-    list_filter = ('is_published', 'department')
+    list_filter = ('division', 'department')
 
 
 admin.site.register(Employee, EmployeeAdmin)

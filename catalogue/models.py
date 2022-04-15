@@ -39,11 +39,11 @@ class Employee(models.Model):
     name = models.CharField(max_length=120, verbose_name='Имя')
     department = models.ForeignKey('Department', verbose_name='Департамент', blank=True, on_delete=models.SET_NULL,
                                    null=True)
-    division = models.ForeignKey('Division', blank=True, on_delete=models.SET_NULL, null=True)
-    position = models.CharField(max_length=120)
+    division = models.ForeignKey('Division', blank=True, on_delete=models.SET_NULL, null=True, verbose_name='Отдел')
+    position = models.CharField(max_length=120, verbose_name='Позиция')
     is_published = models.BooleanField(blank=True, default=True, verbose_name='Публикация')
-    cell = models.CharField(max_length=120, blank=True)
-    phone = models.ForeignKey('Phone', blank=True, on_delete=models.SET_NULL, null=True)
+    cell = models.CharField(max_length=120, blank=True, verbose_name='Сотовый телефон')
+    phone = models.ForeignKey('Phone', blank=True, on_delete=models.SET_NULL, null=True, verbose_name='Телефон')
 
     def __str__(self):
         return self.name
