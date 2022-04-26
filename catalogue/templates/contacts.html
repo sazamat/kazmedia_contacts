@@ -1,3 +1,6 @@
+{% extends 'base.html' %} {% block content %}
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,14 +12,23 @@
 
 
 
+
+
     <h1 class="text-center mt-5">Справочник</h1>
 
-    <form action="" class="form-inline my-2 my-lg-0">
-        <input type="search" class="form-control mr-sm-2" placeholder="Искать" name="q" aria-label="search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Искать </button>
-    </form>
+  <div class="row">
+      <div class="col">
+          <div class="card card-body">
+              <form action="" method="get"
+              style="font-size: 11px">
+                  {{ myFilter.form }}
+                  <button class="btn btn-success ml-4 " type="submit" style="color: black">Поиск</button>
+              </form>
+          </div>
+      </div>
+  </div>
 
-        <table class="table table-bordered table-striped table-hover mt-5" style=" margin: auto; width: 50% !important;">
+        <table class="table table-bordered table-striped table-hover mt-5" style=" margin: auto; width: 50% !important;font-size: 12px; margin-bottom:20px;">
         <tr class="bg-success">
         <th>Имя</th>
         <th>Департамент</th>
@@ -26,11 +38,6 @@
         <th>Телефон</th>
         </tr>
             {% for contact in  contact_list %}
-
-
-{#               {{% if count == 0 %}#}
-
-{#               {% endif %} }#}
 
 
 
@@ -53,5 +60,8 @@
             </tr>
             {% endfor %}
         </table>
+
 </body>
 </html>
+
+{% endblock content %}

@@ -25,7 +25,7 @@ admin.site.register(Phone, PhoneAdmin)
 
 class EmployeeAdmin(admin.ModelAdmin):
     list_display = ('name', 'department', 'is_published')
-    # search_fields = ('name', 'department')
+    search_fields = ('name', 'department__department')
     list_editable = ('is_published',)
     list_filter = ('division', 'department')
 
