@@ -1,5 +1,6 @@
-# kazmedia_website
+# kazmedia_contacts
 This is a site for Kazmedia with **Python** ,Django-Admin panel to manage its employees with its own database . It containt the application of catalogue, containing the contacts for each employee and department.
+**Then homepage, contacts page with navbar and js button to scroll**
 
 Django documentation¶
 
